@@ -71,14 +71,5 @@ class Map
   end
 end
 
-map = Map.new
-map.show
-map.set("key", "value")
-map.show
-map.set("123", "456")
-map.set(543, 234)
-map.show
-p map.get(543)
-map.delete("123")
-map.show
+
 
