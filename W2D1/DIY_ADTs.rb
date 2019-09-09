@@ -37,17 +37,48 @@ class Queue
   end
 end
 
-#queue = Queue.new
-#p queue.line
-#queue.enqueue("ele1")
-#p queue.line
-#queue.enqueue("ele2")
-#p queue.line
-#queue.enqueue("ele3")
-#p queue.line
-#queue.dequeue
-#p queue.line
-#queue.enqueue("ele4")
-#p queue.line
-#p queue.peek
+class Map
+  attr_reader :map
+
+  def initialize
+    @map = Array.new
+  end
+
+  def set(key, value)
+    if !map.flatten.include?(key)
+      map << [key, value]
+    end
+  end
+
+  def get(key)
+    return nil if !map.flatten.include?(key)
+    map.select {|sub| sub if sub.include?(key)}
+  end
+
+  def delete(key)
+    i = 0
+    while i < map.length
+      if map[i].include?(key)
+        map.delete_at(i)
+        break
+      end
+      i += 1
+    end
+  end
+
+  def show
+    p map
+  end
+end
+
+map = Map.new
+map.show
+map.set("key", "value")
+map.show
+map.set("123", "456")
+map.set(543, 234)
+map.show
+p map.get(543)
+map.delete("123")
+map.show
 
