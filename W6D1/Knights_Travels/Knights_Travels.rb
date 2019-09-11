@@ -57,22 +57,16 @@ class KnightPathFinder
 
   def find_path(end_pos)
     end_node = @root_node.dfs(end_pos) 
-    path = [end_node] 
+    trace_path_back(end_node)
+  end
+
+  def trace_path_back(target)
+    path = [target] 
     until path.first.value == @root_node.value 
       target = @root_node.dfs(path.first.value) 
       path.unshift(target.parent) 
     end                           
     path
-  end
-
-  def trace_path_back(target)
-    queue = []
-    other_node = target
-    until queue.nil?
-      queue << other_node
-      other_node = other_node.parent
-    end 
-    queue
   end
 end 
 
