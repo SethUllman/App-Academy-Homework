@@ -7,7 +7,7 @@ class Piece
   end
 
   def to_s
-    #overwrite the to_s method
+    #symbol to string
   end
 
   def empty?
@@ -15,7 +15,7 @@ class Piece
   end
 
   def valid_moves
-    #checks the current valid moves, returns array of possible moves
+    #calls move into check, calls moves and filters out any move that put us into check
   end
 
   def pos=(val)
@@ -29,7 +29,7 @@ class Piece
   private
 
   def move_into_check?(end_pos)
-    #checks if our king in moving into check, returns true or false
+    #dups board and checks to see if king is in check
   end
 
 end

@@ -3,6 +3,17 @@ require_relative 'Stepable'
 class Knight < Piece
 include Stepable
 
+  KNIGHT_MOVES = [
+    [2, 1],
+    [2, -1],
+    [-2, 1],
+    [-2, -1],
+    [1, 2],
+    [1, -2],
+    [-1, 2],
+    [-1, -2]
+  ]
+
   def symbol
 
   end
@@ -11,7 +22,7 @@ include Stepable
   protected 
 
   def move_diffs
-    #return array of differential moves
+    KNIGHT_MOVES
   end
 
 end
@@ -19,6 +30,17 @@ end
 class King < Piece
   include Stepable
 
+  KING_MOVES = [
+    [1,0],
+    [1,1],
+    [0,1],
+    [-1,1],
+    [-1,0],
+    [-1,-1],
+    [0, -1],
+    [1, -1]
+  ]
+
   def symbol
 
   end
@@ -27,7 +49,7 @@ class King < Piece
   protected 
 
   def move_diffs
-    #return array of differential moves
+    KING_MOVES
   end
 
 end
