@@ -1,4 +1,5 @@
-require_relative 'Slideable'
+require_relative "Module_Slideable"
+require_relative "Piece"
 
 class Rook < Piece
   include Slideable
@@ -42,6 +43,5 @@ class Queen < Piece
   def move_dirs
     DIAGONAL_DIRS + HORIZONTAL_DIRS
   end
-  
 
 end

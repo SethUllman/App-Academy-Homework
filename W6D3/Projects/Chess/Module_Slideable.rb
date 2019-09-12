@@ -33,23 +33,24 @@ end
 
 
 private
-
+require "byebug"
 def grow_unblocked_moves_in_dir(dx, dy)
   row, col = pos
   moves = []
-
   loop do  
-    pos_x, pos_y = row + dx, col + dy
-    new_pos = [pos_x, pos_y]
+    row, col = row + dx, col + dy
+    new_pos = [row, col]
 
     break unless board.valid_pos?(new_pos)
     piece = board[new_pos]
-      if piece.empty?
-        moves << new_pos
-      else  
-        moves << new_pos if piece.color != self.color
-        break
-      end     
+    if piece.empty?
+      moves << new_pos
+    else   
+      moves << new_pos if piece.color != self.color
+      break
+    end    
+     
   end
   moves
+end
 end

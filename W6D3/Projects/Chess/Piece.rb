@@ -1,12 +1,15 @@
 class Piece
-
+  attr_reader :color, :pos, :board
+  
   def initialize(color, board, pos)
     @color = color
     @board = board
-    @pos = pos    
+    @pos = pos
+    board.add_piece(self, pos)    
   end
 
   def to_s
+    "#{color}"
     #symbol to string
   end
 

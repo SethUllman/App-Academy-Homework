@@ -1,4 +1,5 @@
-require_relative 'Stepable'
+require_relative 'Module_Stepable'
+require_relative 'Piece'
 
 class Knight < Piece
 include Stepable
