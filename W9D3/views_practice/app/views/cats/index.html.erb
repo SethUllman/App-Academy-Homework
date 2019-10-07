@@ -1,0 +1,15 @@
+<h1>99 Cats</h1>
+
+<table>
+  <thead>
+    <tr>Cat Selection</tr>
+  </thead> 
+  <tbody> 
+    <%@cats.each do |cat|%>
+      <tr>
+        <td><%=cat.name%></td>
+        <td><a href="http://localhost:3000/cats/<%=cat.id%>">click here</a></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
