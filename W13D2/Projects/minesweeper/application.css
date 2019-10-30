@@ -1,0 +1,31 @@
+.tile {
+  padding-left: 3px;
+  border-width: 2px;
+  border-style: solid black;
+  border-color: gray;
+  border-style: outset;
+  background: lightgray;
+  width: 20px;
+  height: 20px;
+}
+
+.tile:hover {
+  background-color: blue;
+}
+
+.revealed {
+  border-style: inset;
+  background: green;
+  
+}
+
+.bombed {
+  background: red;
+}
+
+#root div div{
+  display: flex;
+  height: 28px;
+  width: 240px;
+  margin: auto;
+}
