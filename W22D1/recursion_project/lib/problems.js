@@ -82,7 +82,11 @@ function reverseString(str) {
 // pow(3, 4)    // => 81
 // pow(2, -5)   // => 0.03125
 function pow(base, exponent) {
+    if (exponent === 0) return 1;
 
+    if (exponent > 0) return base * pow(base, exponent-1);
+
+    return 1 / pow(base, exponent * -1);
 }
 
 
