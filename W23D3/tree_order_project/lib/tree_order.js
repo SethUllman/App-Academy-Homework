@@ -1,7 +1,5 @@
 function inOrderArray(root) {
-    if (!root){
-        return [];
-    }
+    if (!root) return [];
 
     return [
         ...inOrderArray(root.left),
@@ -12,7 +10,13 @@ function inOrderArray(root) {
 }
 
 function postOrderArray(root) {
+    if (!root) return [];
 
+    return [
+        ...postOrderArray(root.left),
+        ...postOrderArray(root.right),
+        root.val
+    ];
 }
 
 
